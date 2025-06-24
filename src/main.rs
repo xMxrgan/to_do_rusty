@@ -1,5 +1,4 @@
-mod actions;
-mod tasks;
+mod lib;
 
 fn main() {
     println!("Welcome to TUDU application!");
