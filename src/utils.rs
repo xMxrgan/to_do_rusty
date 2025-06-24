@@ -6,3 +6,7 @@ pub fn random_id_creator() -> u8 {
     let random_id: u8 = rng.random(); // ID casuale tra 1 e 1000
     return random_id;
 }
+
+pub fn read_user_input(s: String) -> String {
+    s.trim().to_string()
+}

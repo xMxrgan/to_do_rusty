@@ -27,3 +27,7 @@ pub fn create_task(name: String, description: String, priority: u8) -> Result<Ta
 fn priority_check(priority: u8) -> bool {
     (1..=5).contains(&priority)
 }
+
+fn edit_task() {}
+
+fn delete_task() {}
