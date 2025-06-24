@@ -1,11 +1,18 @@
-use rand::prelude::*;
-use rand::rng;
+use crate::tasks::Task;
+use crate::utils::random_id_creator;
 
-use crate::utils;
-
-pub fn actions() {
-    let id: u8 = utils::random_id_creator();
-    println!("{id}");
+pub enum Action {
+    Create,
+    Edit,
+    Delete,
+}
+pub enum Status {
+    Active,
+    Completed,
+    Deleted,
 }
 
-pub fn create() {}
+pub fn create_action(name: String) -> Task {
+    let new_id: u8 = random_id_creator();
+    // let new_task: Task = Task { id: new_id };
+}
