@@ -17,9 +17,15 @@ fn main() {
     let action = read_user_input(command.trim().to_lowercase());
 
     match action.as_str() {
-        "create" => println!("Created a new task!"),
-        "edit" => println!("Choose the task to edit:"),
-        "delete" => println!("Choose the task to delete:"),
+        "create" | "c" | "new" => {
+            println!("Choose a name for your task:")
+        }
+        "edit" | "e" | "modify" => {
+            println!("Choose the task to edit:")
+        }
+        "delete" | "d" | "del" | "cancel" => {
+            println!("Choose the task to delete:")
+        }
         _ => println!("Command not valid!"),
     }
 }

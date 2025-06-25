@@ -31,3 +31,5 @@ fn priority_check(priority: u8) -> bool {
 fn edit_task() {}
 
 fn delete_task() {}
+
+fn compare_task(input: String) {}
