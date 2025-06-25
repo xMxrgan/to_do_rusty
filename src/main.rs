@@ -14,7 +14,12 @@ fn main() {
         .read_line(&mut command)
         .expect("Error in the reading phase");
 
-    let action = read_user_input(command.trim());
+    let action = read_user_input(command.trim().to_lowercase());
 
-    match action {}
+    match action.as_str() {
+        "create" => println!("Created a new task!"),
+        "edit" => println!("Choose the task to edit:"),
+        "delete" => println!("Choose the task to delete:"),
+        _ => println!("Command not valid!"),
+    }
 }
