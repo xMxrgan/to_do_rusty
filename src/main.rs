@@ -1,20 +1,33 @@
-pub mod actions;
 pub mod database;
 pub mod tasks;
 pub mod utils;
 
-use crate::actions::Action;
-use crate::database::create;
-use crate::tasks::{Task, create_task};
+use crate::database::*;
+use crate::tasks::*;
 use crate::utils::read_user_input;
 use std::io;
 
 fn main() {
     let mut command: String = String::new();
-    println!("Welcome to TUTU application!\nWrite if you want to CREATE / EDIT or DELETE a todo");
-    io::stdin()
-        .read_line(&mut command)
-        .expect("Error in the reading phase");
+    let connection = init_db().expect("Error during the connection!");
+
+    let mut name: String;
+    let mut description: String;
+    let mut priority: u8;
+    let mut status: String;
+
+    let new_task = Task {
+        id: 0;
+    name: name;
+    }
+
+    println!("Welcome to TUTU application!");
+    loop {
+        println!("Write if you want to CREATE / EDIT or DELETE a todo");
+        io::stdin()
+            .read_line(&mut command)
+            .expect("Error in the reading phase");
+    }
 
     let action = read_user_input(command.trim().to_lowercase());
 

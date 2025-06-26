@@ -1,10 +1,11 @@
 use crate::utils::random_id_creator;
 
 pub struct Task {
-    id: u8,
-    name: String,
-    description: String,
-    priority: u8, // From 1 to 5
+    pub id: i32,
+    pub name: String,
+    pub description: String,
+    pub priority: u8, // From 1 to 5
+    pub status: String,
 }
 
 pub fn create_task(name: String, description: String, priority: u8) -> Result<Task, String> {
