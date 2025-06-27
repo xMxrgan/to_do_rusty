@@ -46,7 +46,7 @@ fn main() {
                     Ok(num) => num,
                     Err(_) => {
                         println!("Invalid priority, setting to 0.");
-                        0
+                        1
                     }
                 };
 
@@ -63,12 +63,15 @@ fn main() {
                     priority,
                     status,
                 };
+
+                insert_task(&connection, &new_task).expect("Failed to insert task!");
             }
+            // "list" | "ls" => {}
             "edit" | "e" | "modify" => {
-                println!("Choose the task to edit:")
+                println!("Choose the task to edit:");
             }
             "delete" | "d" | "del" | "cancel" => {
-                println!("Choose the task to delete:")
+                println!("Choose the task to delete:");
             }
             _ => println!("Command not valid!"),
         }

@@ -8,6 +8,12 @@ pub struct Task {
     pub status: String,
 }
 
+enum Status {
+    ToDo,
+    InProgress,
+    Done,
+}
+
 pub fn create_task(name: String, description: String, priority: u8) -> Result<Task, String> {
     let id = random_id_creator();
 
@@ -20,6 +26,8 @@ pub fn create_task(name: String, description: String, priority: u8) -> Result<Ta
         name,
         description,
         priority,
+        status,
+        ToDO,
     };
 
     Ok(new_task)
